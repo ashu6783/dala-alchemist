@@ -88,8 +88,8 @@ export default function DashboardHome() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 p-6">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br p-6">
+      <div className=" max-w-7xl mx-auto">
         {/* Header */}
         <motion.header 
           className="mb-12"
@@ -97,19 +97,19 @@ export default function DashboardHome() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex items-center gap-4 mb-2">
+          <div className=" md:flex flex flex-wrap  md:items-center gap-4 mb-2">
             <motion.div 
-              className="w-14 h-14 bg-gradient-to-br from-indigo-500 via-purple-500 to-purple-600 rounded-2xl flex items-center justify-center text-white shadow-lg"
+              className="w-8 h-8 md:w-14 md:h-14 bg-gradient-to-br from-indigo-500 via-purple-500 to-purple-600 rounded-2xl flex items-center justify-center text-white shadow-lg"
               whileHover={{ scale: 1.05, rotate: 5 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Zap size={24} />
             </motion.div>
             <div>
-              <h1 className="text-5xl font-black bg-gradient-to-r from-slate-800 via-slate-700 to-slate-600 bg-clip-text text-transparent">
+              <h1 className=" text-5xl md:text-3xl font-black bg-gradient-to-r from-slate-400 via-gray-200 to-gray-400 bg-clip-text text-transparent">
                 Data Alchemist
               </h1>
-              <p className="text-slate-600 text-xl font-medium">Transform your data into insights</p>
+              <p className="text-slate-400 text-xl font-medium">Transform your data into insights</p>
             </div>
           </div>
         </motion.header>
@@ -130,12 +130,12 @@ export default function DashboardHome() {
 
         {/* Quick Actions */}
         <motion.div 
-          className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-slate-200/50 p-8 mb-8"
+          className=" bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-slate-200/50 p-8 mb-8"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <div className="flex items-center gap-3 mb-8">
+          <div className="md:flex flex flex-wrap md:items-center gap-3 mb-8">
             <motion.div
               whileHover={{ rotate: 180 }}
               transition={{ duration: 0.3 }}
@@ -197,7 +197,7 @@ export default function DashboardHome() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="flex items-center gap-3 mb-8">
+          <div className="flex flex-wrap md:items-center gap-3 mb-8">
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
@@ -208,7 +208,7 @@ export default function DashboardHome() {
           </div>
           
           <motion.div 
-            className="flex justify-between flex-wrap  gap-8"
+            className="flex md:justify-between flex-wrap  gap-8"
             variants={containerVariants}
             initial="hidden"
             animate="visible"

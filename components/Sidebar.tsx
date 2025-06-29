@@ -12,7 +12,8 @@ import {
   Compass,
   Folder,
   Zap,
-  Ruler
+  Ruler,
+  HardDriveDownload,
 } from 'lucide-react';
 
 const links = [
