@@ -9,16 +9,34 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@shadcn/ui": "^0.0.4",
+    "@tanstack/react-table": "^8.21.3",
+    "ag-grid-community": "^34.0.0",
+    "ag-grid-react": "^34.0.0",
+    "classnames": "^2.5.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.19.2",
+    "groq-sdk": "^0.26.0",
+    "html2pdf.js": "^0.10.3",
+    "json2csv": "^6.0.0-alpha.2",
+    "langchain": "^0.3.29",
+    "lucide-react": "^0.523.0",
+    "next": "15.3.4",
+    "papaparse": "^5.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.3.4"
+    "react-hot-toast": "^2.5.2",
+    "react-icons": "^5.5.0",
+    "xlsx": "^0.18.5",
+    "zustand": "^5.0.6"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/papaparse": "^5.3.16",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }

@@ -1,0 +1,4 @@
+TaskID,TaskName,Category,Duration,RequiredSkills,PreferredPhases,MaxConcurrent
+T1,Build UI,Frontend,2,"React","1-2",2
+T2,API Setup,Backend,3,"Node","[2,3,4]",1
+T3,Data Analysis,Data,1,"Python","3-5",2

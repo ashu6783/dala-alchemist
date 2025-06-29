@@ -1,0 +1,4 @@
+WorkerID,WorkerName,Skills,AvailableSlots,MaxLoadPerPhase,WorkerGroup,QualificationLevel
+W1,John Doe,"React,Node","[1,2,3]",2,WG1,5
+W2,Jane Smith,"Python,SQL","[2,3,4]",3,WG2,4
+W3,Bob Builder,"React,Python","[1,3,5]",2,WG1,3
