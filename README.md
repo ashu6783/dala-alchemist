@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Data Alchemist: AI-Powered Resource Allocation Configurator
 
-## Getting Started
+**Data Alchemist** is an AI-enabled Next.js application that helps you clean, validate, and configure resource allocation data from messy spreadsheets.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📦 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 📂 Upload CSV or XLSX files for:
+  - Clients
+  - Workers
+  - Tasks
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 🧠 AI-Powered Parsing:
+  - Smart header mapping
+  - Automatic data structure normalization
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 🧪 Validations:
+  - Real-time and on-upload validations
+  - Missing columns, invalid formats, broken references, etc.
+  - Visual error highlighting and summary panel
 
-## Learn More
+- ✍️ Inline Editing:
+  - Edit data directly in a spreadsheet-style UI
 
-To learn more about Next.js, take a look at the following resources:
+- 🔍 Natural Language Query:
+  - Filter data using plain English (e.g., "tasks with duration > 1")
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 📋 Rule Builder:
+  - Build business rules using UI
+  - Generate `rules.json` file automatically
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 🎛️ Prioritization Controls:
+  - Sliders to assign weightage (e.g., priority, fairness, workload)
 
-## Deploy on Vercel
+- 📤 Export:
+  - Cleaned CSV files + generated `rules.json` ready for downstream tools
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ Tech Stack
+
+- **Frontend:** Next.js 14 (App Router) + TypeScript + TailwindCSS
+- **State Management:** Zustand
+- **Data Grid:** AG Grid / TanStack Table
+- **CSV/XLSX Parsing:** PapaParse + SheetJS
+- **AI Integration:** OpenAI / Groq / Gemini (LLM-based AI helpers)
+- **Export Tools:** json2csv, html2pdf.js, XLSX
+
+---
+
+## 📁 Folder Structure
+
+    below 
+    data-alchemist/
+    │
+    ├── app/
+    │   ├── page.tsx                # Home page with uploader + intro
+    │   ├── dashboard/              # Main screen after upload
+    │   │   ├── layout.tsx
+    │   │   ├── page.tsx
+    │   │   └── [entity]/           # clients | tasks | workers tables
+    │
+    ├── components/
+    │   ├── DataTable.tsx           # Table with inline editing + validation
+    │   ├── FileUploader.tsx        # Drag-drop + file parser
+    │   ├── ValidationPanel.tsx     # Errors summary sidebar
+    │   ├── RuleBuilder.tsx         # UI to add rules manually
+    │   ├── RuleSuggestions.tsx     # AI-suggested rules
+    │   ├── PrioritySliders.tsx     # Sliders for setting weights
+    │   ├── AIQueryBar.tsx          # Natural language search/mod
+    │   └── ExportPanel.tsx         # Download cleaned data + rule.json
+    │
+    ├── lib/
+    │   ├── validations.ts          # All validation functions
+    │   ├── ai.ts                   # Calls to LLM (query > json, rule suggest)
+    │   └── parseUtils.ts           # Header mapping, normalizing
+    │
+    ├── public/
+    │
+    ├── samples/
+    │   ├── clients.csv
+    │   ├── workers.csv
+    │   └── tasks.csv
+    │
+    ├── types/
+    │   ├── client.d.ts
+    │   ├── worker.d.ts
+    │   └── task.d.ts
+    │
+    ├── utils/
+    │   └── exportUtils.ts
+    │
+    ├── README.md
+    └── package.json
