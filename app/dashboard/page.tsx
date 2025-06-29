@@ -153,7 +153,7 @@ export default function DashboardHome() {
           >
             <motion.div variants={itemVariants}>
               <ActionButton
-                href="/upload"
+                href="/dashboard/upload"
                 icon={Upload}
                 label="Upload Files"
                 description="Import new data"

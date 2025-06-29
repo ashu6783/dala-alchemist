@@ -6,12 +6,14 @@ import { useState, useEffect } from 'react';
 import type { Worker } from '@/types/worker';
 import { ColumnDef } from '@tanstack/react-table';
 import { validateWorkers } from '@/lib/validations';
+import AIQuerySideBar from '@/components/AIQuerySideBar';
 
 export default function WorkersPage() {
   const { workers, setWorkers } = useDataStore();
   const [data, setData] = useState<Worker[]>(workers);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [errorSummary, setErrorSummary] = useState<string[]>([]);
+  const [filteredWorkers,setFilteredWorkers] = useState<Worker[]>(workers);
 
   useEffect(() => {
     runValidation(workers);
@@ -171,7 +173,11 @@ export default function WorkersPage() {
           </div>
         </div>
       )}
-
+      <AIQuerySideBar
+        entity="tasks"
+        data={workers}
+        setFilteredData={setFilteredWorkers}
+      />
       <DataTable data={data} columns={columns} onUpdate={handleUpdate} />
     </div>
   );

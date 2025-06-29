@@ -6,12 +6,14 @@ import { useState, useEffect } from 'react';
 import type { Client } from '@/types/client';
 import { ColumnDef } from '@tanstack/react-table';
 import { validateClients } from '@/lib/validations';
+import AIQuerySideBar from '@/components/AIQuerySideBar';
 
 export default function ClientPage() {
   const { clients, tasks, setClients } = useDataStore();
   const [data, setData] = useState<Client[]>(clients);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [errorSummary, setErrorSummary] = useState<string[]>([]);
+    const [filteredClients, setFilteredClients] = useState<Client[]>(clients);
 
   useEffect(() => {
     runValidation(clients);
@@ -173,6 +175,12 @@ export default function ClientPage() {
           </div>
         </div>
       )}
+
+        <AIQuerySideBar
+              entity="clients"
+              data={tasks}
+              setFilteredData={setFilteredClients} 
+            />
 
       <DataTable data={data} columns={columns} onUpdate={handleUpdate} />
     </div>

@@ -53,14 +53,14 @@ export default function TasksPage() {
       value = Number(value);
     }
 
-    // Normalize RequiredSkills
+
     if (columnId === 'RequiredSkills') {
       if (typeof value === 'string') {
         value = value.split(',').map((s: string) => s.trim()).filter(Boolean);
       }
     }
 
-    // Normalize PreferredPhases
+ 
     if (columnId === 'PreferredPhases') {
       if (typeof value === 'string') {
         try {
@@ -71,7 +71,6 @@ export default function TasksPage() {
       }
     }
 
-    // Normalize MaxConcurrent
     if (columnId === 'MaxConcurrent') {
       value = Number(value);
     }
@@ -187,8 +186,8 @@ export default function TasksPage() {
 
       <AIQuerySideBar
         entity="tasks"
-        data={tasks} // Pass the original tasks data
-        setFilteredData={setFilteredTasks} // This will update the filtered tasks
+        data={tasks}
+        setFilteredData={setFilteredTasks} 
       />
 
       {/* Use filteredTasks for the DataTable display */}
